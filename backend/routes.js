@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const Member = require('./models/members');
-const Rezept = require('./models/rezepte');
 
 // get all members
 router.get('/members', async(req, res) => {
@@ -23,7 +22,7 @@ router.post('/members', async(req, res) => {
 });
 
 // get one member via id
-router.get('/members/:id', async(req, res) => {
+/*router.get('/members/:id', async(req, res) => {
     const member = await Member.findOne({ _id: req.params.id });
     console.log(req.params);
     if(member) {
@@ -34,7 +33,20 @@ router.get('/members/:id', async(req, res) => {
             error: "Member does not exist!"
         });
     }
+})*/
+router.get('/members/:id', async(req, res) => {
+    try {
+        const member = await Member.find({ _id: req.params.id });
+        console.log(req.params);
+        res.send(member[0]);
+    } catch {
+        res.status(404);
+        res.send({
+            error: 'Member does not exist'
+        })
+    }
 })
+
 
 // update one member
 router.patch('/members/:id', async(req, res) => {

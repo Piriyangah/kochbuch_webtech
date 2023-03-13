@@ -1,1 +1,41 @@
-<p>detail works!</p>
+<main class="d-flex min-vh-100">
+    <fieldset class="container  mt-5">
+      <legend *ngIf="member" class="mb-4">Eintrag von {{ member.forename}} {{ member.surname }} aktualisieren
+      </legend>
+      <legend *ngIf="!member" class="mb-4">Eintrag aktualisieren</legend>
+      <form [formGroup]="form" (ngSubmit)="update()">
+        <div class="mb-3 row">
+          <label class="col-2 col-form-label" for="forename">Vorname</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="forename" placeholder="Vorname"
+            formControlName="firstnameControl" />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-2 col-form-label" for="surname">Nachname</label>
+          <div class="col-10">
+            <input type="text" class="col-10 form-control" id="surname" placeholder="Nachname"
+            formControlName="lastnameControl" />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-2 col-form-label" for="email">E-Mail</label>
+          <div class="col-10">
+            <input type="email" class="col-10 form-control" id="email" placeholder="E-Mail" formControlName="emailControl" />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-2 col-form-label" for="ipaddress">IP-Adresse</label>
+          <div class="col-10">
+            <input type="text" class="col-10 form-control" id="ipaddress" placeholder="IP-Adresse" formControlName="ipaddressControl" />
+          </div>
+        </div>
+        <div class="row ">
+          <button type="submit" class="col-5 btn btn-secondary">Aktualisieren</button>
+          <div class="col-2"></div>
+          <button type="button" class="col-5 btn btn-secondary" (click)="cancel() ">Abbrechen</button>
+        </div>
+      </form>
+    </fieldset>
+  </main>
+  

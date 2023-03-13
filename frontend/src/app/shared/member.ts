@@ -1,8 +1,7 @@
 export interface Member {
-    _id: string;
-    firstname: string;
-    lastname: string;
-    email: string;
-    ipaddress: string;
-  }
-  
+  _id: string;
+  forename: string;
+  surname: string;
+  email: string;
+  ipaddress: string;
+}

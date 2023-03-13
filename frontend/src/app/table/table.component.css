@@ -1,0 +1,12 @@
+/*[FE-BE-ANbindung:] für eine ansprechende Ansicht der Daten, 
+  die Daten in einer Tablle anzeigen und verwenden dazu Bootstrap-CSS-Klassen für das Design. 
+  Dazu wollen wir auch Bootstrap-Icons: 'npm i bootstrap-icons'
+  Um die Icons in der TableComponent einfach verwenden zu können, werden die Icons hier in css importiert:*/
+@import url('../../../node_modules/bootstrap-icons/font/bootstrap-icons.css'); 
+main {
+  background-color: rgba(99, 192, 235, 0.729);
+}
+
+legend {
+  font-weight: bold;
+}

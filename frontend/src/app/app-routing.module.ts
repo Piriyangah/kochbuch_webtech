@@ -15,10 +15,6 @@ const routes: Routes = [{
     component: TableComponent
   },
   {
-    path: "member",
-    component: CreateComponent
-  },
-  {
     path: "member/:id",
     component: DetailComponent
   }];
